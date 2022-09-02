@@ -72,7 +72,7 @@ public class UrlServiceImpl implements UrlService {
     }
 
     private LocalDateTime setDate(LocalDateTime expirationDate, LocalDateTime creationDate) {
-        return expirationDate == null ? creationDate.plusWeeks() : expirationDate;
+        return expirationDate == null ? creationDate.plusWeeks(1) : expirationDate;
     }
 
     private String encodeUrl(String url) {

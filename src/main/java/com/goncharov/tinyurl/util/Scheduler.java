@@ -19,7 +19,7 @@ public class Scheduler {
     }
 
     @Scheduled(fixedRate = 10_000)
-    public void scheduleDelete() {
+    private void scheduleDelete() {
         urlService.deleteAllByExpirationDateBefore(LocalDateTime.now());
     }
 }
