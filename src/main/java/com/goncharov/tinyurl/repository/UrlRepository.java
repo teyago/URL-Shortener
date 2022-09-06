@@ -5,12 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Repository
 public interface UrlRepository extends JpaRepository<Url, Long> {
-    Url findByAlias(String alias);
+    Optional<Url> findByAlias(String alias);
 
-    void deleteUrlByAlias(String alias);
+    void deleteByAlias(String alias);
 
     void deleteAllByExpirationDateBefore(LocalDateTime time);
 }

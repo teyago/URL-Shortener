@@ -14,7 +14,7 @@ public interface UrlMapper {
 
     UrlMapper INSTANCE = Mappers.getMapper(UrlMapper.class);
 
-    @Mapping(source = "date", target = "expirationDate", dateFormat = dateFormat)
+    @Mapping(source = "expirationDate", target = "expirationDate", dateFormat = dateFormat)
     Url urlToAlias(RequestDTO requestDTO);
 
     @Mapping(target = "expirationDate", dateFormat = dateFormat)

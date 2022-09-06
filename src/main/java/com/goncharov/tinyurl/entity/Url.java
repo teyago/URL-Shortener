@@ -1,8 +1,9 @@
 package com.goncharov.tinyurl.entity;
 
 import lombok.Data;
+
 import javax.persistence.*;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,8 +15,8 @@ public class Url {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Min(4)
     @Column(name = "url", nullable = false)
+    @Size(min = 5)
     private String url;
 
     @Column(name = "alias", unique = true, nullable = false)

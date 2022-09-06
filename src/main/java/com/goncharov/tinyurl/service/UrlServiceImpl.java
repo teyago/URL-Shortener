@@ -2,6 +2,7 @@ package com.goncharov.tinyurl.service;
 
 import com.goncharov.tinyurl.entity.Url;
 
+import com.goncharov.tinyurl.exception.UrlDoesntExistException;
 import com.goncharov.tinyurl.repository.UrlRepository;
 import com.google.common.hash.Hashing;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,13 +41,13 @@ public class UrlServiceImpl implements UrlService {
 
     @Override
     public Url getUrlFromAlias(String alias) {
-        return urlRepository.findByAlias(alias);
+        return urlRepository.findByAlias(alias).orElseThrow(UrlDoesntExistException::new);
     }
 
     @Override
     public void sendRedirect(String alias, HttpServletResponse response) throws IOException {
 
-        Url url = urlRepository.findByAlias(alias);
+        Url url = urlRepository.findByAlias(alias).orElseThrow(UrlDoesntExistException::new);
 
         incrementCounter(url);
 
@@ -61,8 +62,9 @@ public class UrlServiceImpl implements UrlService {
 
     @Transactional
     @Override
-    public void deleteUrlByAlias(String alias) {
-        urlRepository.deleteUrlByAlias(alias);
+    public void deleteByAlias(String alias) {
+        urlRepository.findByAlias(alias).orElseThrow(UrlDoesntExistException::new);
+        urlRepository.deleteByAlias(alias);
     }
 
     @Transactional

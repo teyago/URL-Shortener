@@ -17,7 +17,7 @@ public interface UrlService {
 
     void sendRedirect(String alias, HttpServletResponse response) throws IOException;
 
-    void deleteUrlByAlias(String alias);
+    void deleteByAlias(String alias);
 
     void deleteAllByExpirationDateBefore(LocalDateTime localDateTime);
 }
