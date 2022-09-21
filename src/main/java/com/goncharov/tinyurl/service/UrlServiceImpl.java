@@ -37,7 +37,6 @@ public class UrlServiceImpl implements UrlService {
     }
 
     @Transactional
-    @Override
     public void saveUrl(Url url) {
         urlRepository.save(url);
     }
