@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.validation.constraints.Pattern;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @Data
 public class RequestDTO {
 

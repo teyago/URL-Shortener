@@ -8,6 +8,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @Mapper
 public interface UrlMapper {
     String dateFormat = "yyyy-MM-dd HH:mm";

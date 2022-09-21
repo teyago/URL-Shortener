@@ -6,6 +6,9 @@ import org.springframework.validation.FieldError;
 
 import java.util.List;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 public class ExceptionUtil {
     public static void returnExceptionsToClient(BindingResult bindingResult) {
         StringBuilder errorMsg = new StringBuilder();

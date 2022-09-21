@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @Repository
 public interface UrlRepository extends JpaRepository<Url, Long> {
     Optional<Url> findByAlias(String alias);

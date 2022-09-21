@@ -17,6 +17,9 @@ import java.io.IOException;
 
 import static com.goncharov.tinyurl.util.ExceptionUtil.returnExceptionsToClient;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @RestController
 @RequestMapping("/tinyurl")
 public class UrlController {
@@ -32,7 +35,6 @@ public class UrlController {
     public ResponseEntity<?> generateShortLink(@RequestBody @Valid RequestDTO requestDto,
                                                BindingResult bindingResult) {
 
-        // throws UrlNotCreatedException in static method with exception messages
         if (bindingResult.hasErrors()) {
             returnExceptionsToClient(bindingResult);
         }

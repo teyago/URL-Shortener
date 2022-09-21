@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @Component
 public class UrlServiceImpl implements UrlService {
     private final UrlRepository urlRepository;

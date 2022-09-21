@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @Service
 public interface UrlService {
     Url getUrlFromAlias(String alias);

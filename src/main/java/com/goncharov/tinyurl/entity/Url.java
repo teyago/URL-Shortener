@@ -6,6 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
+/**
+ * @author Goncharov Aleksandr
+ */
 @Entity
 @Data
 @Table(name = "Url")
