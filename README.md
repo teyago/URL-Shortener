@@ -1,16 +1,32 @@
 # Url Shortener service
 
----
-**How to install and run:**
+The technology behind it:
+* Java 11
+* Postgres
+* Spring Boot
+* Spring Data
 
-* git clone https://github.com/teyago/URL-Shortener
-* go to src\main\resources
+---
+**Quick start:**
+
+#### Using `docker-compose`
+
+In the terminal run the following command:
+```console
+$ docker-compose up
+```
+
+---
+
+#### Using `Maven (local Postgres database)`
+
 * configure application.properties
 
-**cmd:**
+In the terminal run the following command:
 
-* mvn spring-boot:run
-
+```console
+$ mvn spring-boot:run
+```
 ---
 **How to use:**
 
